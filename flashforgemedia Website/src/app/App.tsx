@@ -512,7 +512,7 @@ function About() {
               <span style={{ color: YELLOW }}>AVERAGE.</span>
             </h2>
             <p className="mb-6" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
-              Flashforge Media was born from frustration with agencies that talk big and deliver little. Founded in 2019, we've built our reputation on one thing: results that are impossible to ignore.
+              Flashforge Media was born from frustration with agencies that talk big and deliver little. Founded in 2026, we've built our reputation on one thing: results that are impossible to ignore.
             </p>
             <p style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}></p>
             <div className="mt-10">
