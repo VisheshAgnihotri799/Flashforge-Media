@@ -730,7 +730,7 @@ function Footer() {
             <p className="uppercase text-xs mb-6" style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 600, color: YELLOW, letterSpacing: "0.2em" }}>Follow Us</p>
             <div className="flex gap-4">
               {[Instagram].map((Icon, i) => (
-                <a key={i} href="https://www.instagram.com/media_flashforge"  target="_blank" rel="noopener noreferrer  className="w-10 h-10 flex items-center justify-center border border-white/10 transition-all duration-200"
+                <a key={i} href="https://www.instagram.com/media_flashforge"  target="_blank" rel="noopener noreferrer"  className="w-10 h-10 flex items-center justify-center border border-white/10 transition-all duration-200"
                   onMouseEnter={(e) => { const el = e.currentTarget; el.style.borderColor = YELLOW; el.style.background = YELLOW; }}
                   onMouseLeave={(e) => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.1)"; el.style.background = "transparent"; }}>
                   <Icon size={16} style={{ color: "rgba(255,255,255,0.5)" }} />
