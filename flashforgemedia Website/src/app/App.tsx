@@ -579,11 +579,28 @@ function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSending(true);
+  try {
+    const res = await fetch("https://formspree.io/f/mnjylown", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(form),
+    });
+    if (res.ok) {
+      setSent(true);
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch {
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setSending(false);
+  }
+};
 
   return (
     <section id="contact" className="py-32 px-6 lg:px-12" style={{ background: "#0f0f0f" }} ref={ref}>
