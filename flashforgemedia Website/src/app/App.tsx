@@ -679,15 +679,16 @@ const handleSubmit = async (e: React.FormEvent) => {
                     onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; }}
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="flex items-center gap-3 px-10 py-5 uppercase text-sm transition-all duration-200 w-full justify-center"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, background: YELLOW, color: "#0a0a0a", letterSpacing: "0.12em" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "#fff"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = YELLOW; }}
-                >
-                  Send Message <ArrowRight size={16} />
-                </button>
+               <button
+  type="submit"
+  disabled={sending}
+  className="flex items-center gap-3 px-10 py-5 uppercase text-sm transition-all duration-200 w-full justify-center"
+  style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, background: YELLOW, color: "#0a0a0a", letterSpacing: "0.12em", opacity: sending ? 0.6 : 1 }}
+  onMouseEnter={(e) => { if (!sending) e.currentTarget.style.background = "#fff"; }}
+  onMouseLeave={(e) => { if (!sending) e.currentTarget.style.background = YELLOW; }}
+>
+  {sending ? "Sending..." : "Send Message"} <ArrowRight size={16} />
+</button>
               </form>
             )}
           </div>
